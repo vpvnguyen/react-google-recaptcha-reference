@@ -5,7 +5,7 @@ import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 
 function App() {
-  const [formData, setFormData] = React.useState({});
+  const [formData, setFormData] = React.useState({ name: "" });
   const [recaptchaValue, setRecaptchaValue] = React.useState("");
   const [isDisabled, setIsDisabled] = React.useState(true);
 
@@ -13,7 +13,6 @@ function App() {
     <div className="app">
       <form
         className="form"
-        action=""
         onSubmit={async (e) => {
           console.log("submitted form");
           e.preventDefault();
@@ -38,8 +37,8 @@ function App() {
           // const googleResponse = await axios.post(
           //   "https://www.google.com/recaptcha/api/siteverify",
           //   {
-          //     secret,
-          //     response,
+          //     secret: <SITE_KEY>,
+          //     response: <VALUE_FROM_CAPTCHA_ONCHANGE>,
           //   }
           // );
         }}
@@ -48,7 +47,7 @@ function App() {
         <input
           type="text"
           name="name"
-          value={formData.name || ""}
+          value={formData.name}
           onChange={(e) => setFormData({ [e.target.name]: e.target.value })}
         />
 
