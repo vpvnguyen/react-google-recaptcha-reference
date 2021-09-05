@@ -29,7 +29,7 @@ function App() {
               formData,
               recaptcha: {
                 value: recaptchaValue,
-                siteKey: "6LeNrUYcAAAAALUbe5rhHLjCRTIhLORnDKOYoaBX",
+                siteKey: "SITE_KEY",
               },
             }
           );
@@ -53,7 +53,7 @@ function App() {
         />
 
         <ReCAPTCHA
-          sitekey="6LeNrUYcAAAAALUbe5rhHLjCRTIhLORnDKOYoaBX"
+          sitekey="SITE_KEY"
           onChange={(value) => {
             console.log("ReCAPTCHA value:", value);
             setRecaptchaValue(value);
